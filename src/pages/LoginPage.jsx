@@ -11,7 +11,7 @@ const LoginPage = ({ onLogin }) => {
     if (login(username, password)) {
       onLogin();
     } else {
-      setError('Invalid credentials. Try admin/admin123');
+      setError('Invalid credentials. Try amr/123');
     }
   };
 
@@ -27,7 +27,7 @@ const LoginPage = ({ onLogin }) => {
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              placeholder="admin"
+              placeholder="amr"
               onKeyPress={(e) => e.key === 'Enter' && handleSubmit()}
             />
           </div>
@@ -38,7 +38,7 @@ const LoginPage = ({ onLogin }) => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              placeholder="admin123"
+              placeholder="123"
               onKeyPress={(e) => e.key === 'Enter' && handleSubmit()}
             />
           </div>
@@ -50,7 +50,7 @@ const LoginPage = ({ onLogin }) => {
             Login
           </button>
         </div>
-        <p className="text-sm text-gray-500 mt-4 text-center">Hint: admin / admin123</p>
+        <p className="text-sm text-gray-500 mt-4 text-center">Hint: amr / 123</p>
       </div>
     </div>
   );
