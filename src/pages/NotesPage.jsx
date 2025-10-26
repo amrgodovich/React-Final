@@ -41,7 +41,8 @@ const NotesPage = ({ onNavigate }) => {
               onChange={(e) => setNoteText(e.target.value)}
               placeholder="Enter your note..."
               className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
-              onKeyPress={(e) => e.key === 'Enter' && addNote()}
+              onKeyPress={(e) => e.key === 'Enter' && addNote()
+              }
             />
             <select
               value={priority}
@@ -62,44 +63,38 @@ const NotesPage = ({ onNavigate }) => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {Object.entries(priorityConfig).map(([key, config]) => (
-            <div key={key} className="bg-white rounded-lg shadow-lg p-6">
-              <h2 className="text-xl font-bold text-gray-800 mb-4">{config.title}</h2>
-              <div className="space-y-3">
-                {notes
-                  .filter((note) => note.priority === key)
-                  .map((note) => (
-                    <div
-                      key={note.id}
-                      className={`p-4 rounded-lg border-2 ${config.color}`}
-                    >
-                      <p className="text-gray-800 mb-2">{note.text}</p>
-                      <div className="flex gap-2">
-                        <select
-                          value={note.priority}
-                          onChange={(e) => changePriority(note.id, e.target.value)}
-                          className="text-sm px-2 py-1 border rounded"
-                        >
-                          <option value="important">Important</option>
-                          <option value="normal">Normal</option>
-                          <option value="delayed">Delayed</option>
-                        </select>
-                        <button
-                          onClick={() => deleteNote(note.id)}
-                          className="text-sm px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600"
-                        >
-                          Delete
-                        </button>
-                      </div>
+        {["important", "normal", "delayed"].map((priority) => (
+          <div key={priority} className="bg-white rounded-lg shadow p-4">
+            <h2 className="text-lg font-bold mb-3">
+              { priority.slice(0).toUpperCase()} Notes
+            </h2>
+            {
+              notes.filter((n) => n.priority === priority).map((note) => (
+                  <div key={note.id} className="border rounded p-3 mb-2">
+                    <p className="mb-2">{note.text}</p>
+                    <div className="flex gap-2">
+                      <select
+                        value={note.priority}
+                        onChange={(e) => changePriority(note.id, e.target.value)}
+                        className="border rounded px-2 py-1 text-sm"
+                      >
+                        <option value="important">Important</option>
+                        <option value="normal">Normal</option>
+                        <option value="delayed">Delayed</option>
+                      </select>
+                      <button
+                        onClick={() => deleteNote(note.id)}
+                        className="bg-red-500 text-white px-3 py-1 rounded text-sm"
+                      >
+                        Delete
+                      </button>
                     </div>
-                  ))}
-                {notes.filter((note) => note.priority === key).length === 0 && (
-                  <p className="text-gray-400 text-center py-4">No notes</p>
-                )}
-              </div>
-            </div>
-          ))}
-        </div>
+                  </div>
+                ))
+            }
+          </div>
+        ))}
+      </div>
       </div>
     </div>
   );
