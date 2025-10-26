@@ -7,7 +7,7 @@ const WeatherPage = ({ onNavigate }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   
-  const API_KEY = '16e028695d6227e9d64d304c6dc5bff0';
+  const API_KEY = '76e597b1055a0e83f7b30ff7d2993c40';
 
   const fetchWeather = (query) => {
     setLoading(true);
