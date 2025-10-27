@@ -15,8 +15,8 @@ A beginner-friendly React TypeScript dashboard app utilizing React Router, Conte
 
 1. **Clone the repository:**
    ```
-   git clone <repository-url>
-   cd <repository-name>
+   git clone https://github.com/amrgodovich/React-Final.git
+   cd React-Final
    ```
 2. **Install dependencies:**
    ```
