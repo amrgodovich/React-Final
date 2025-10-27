@@ -17,6 +17,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logout = () => {
+    console.log('logout called');
     setIsAuthenticated(false);
     setUser(null);
     // onNavigate('login');
