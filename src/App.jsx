@@ -26,7 +26,7 @@ function App() {
   return (
     <AuthProvider>
       {currentPage === 'login' && <LoginPage onLogin={() => navigate('dashboard')} />}
-      {currentPage === 'dashboard' && <Dashboard onNavigate={navigate} onLogout={handleLogout} />}
+      {currentPage === 'dashboard' && <Dashboard onNavigate={navigate}/>}
       {currentPage === 'users' && <UsersPage onNavigate={navigate} onSelectUser={(id) => navigate('userDetail', id)} />}
       {currentPage === 'userDetail' && <UserDetailPage userId={selectedUserId} onNavigate={navigate} todos={todos} setTodos={setTodos} />}
       {currentPage === 'notes' && <NotesPage onNavigate={navigate} />}
