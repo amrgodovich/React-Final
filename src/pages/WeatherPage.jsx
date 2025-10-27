@@ -33,18 +33,6 @@ const WeatherPage = ({ onNavigate }) => {
     }
   };
 
-  const getCurrentLocation = () => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const { latitude, longitude } = position.coords;
-          fetchWeather(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`);
-        },
-        () => setError('Unable to retrieve location')
-      );
-    }
-  };
-
   return (
     <div className="min-h-screen bg-gray-100">
       <Navbar onBack={() => onNavigate('dashboard')} backText="← Back to Dashboard" />
@@ -59,7 +47,6 @@ const WeatherPage = ({ onNavigate }) => {
               onChange={(e) => setCity(e.target.value)}
               placeholder="Enter city name..."
               className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
-              onKeyPress={(e) => e.key === 'Enter' && searchCity()}
             />
             <button
               onClick={searchCity}
@@ -67,12 +54,7 @@ const WeatherPage = ({ onNavigate }) => {
             >
               Search
             </button>
-            <button
-              onClick={getCurrentLocation}
-              className="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
-            >
-              Current Location
-            </button>
+
           </div>
 
           {loading && <p className="text-center text-gray-600 py-8">Fetching weather...</p>}

@@ -6,7 +6,7 @@ const Dashboard = ({ onNavigate }) => {
   const cards = [
     { id: 'users', title: 'User & Posts Manager', icon: Users, color: 'bg-blue-500' },
     { id: 'notes', title: 'Note Manager', icon: FileText, color: 'bg-green-500' },
-    { id: 'analytics', title: 'Simple Analytics', icon: BarChart3, color: 'bg-purple-500' },
+    { id: 'analytics', title: 'Analytics', icon: BarChart3, color: 'bg-purple-500' },
     { id: 'weather', title: 'Weather Widget', icon: Cloud, color: 'bg-orange-500' }
   ];
 
