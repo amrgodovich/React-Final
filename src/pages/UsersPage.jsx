@@ -26,7 +26,7 @@ const UsersPage = ({ onNavigate, onSelectUser }) => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Navbar onBack={() => onNavigate('dashboard')} backText="← Back to Dashboard" />
+      <Navbar onBack={() => onNavigate('dashboard')} backText="Back to Dashboard" />
 
       <div className="max-w-4xl mx-auto px-6 py-8">
         <h1 className="text-2xl font-semibold text-gray-800 mb-6">Users List</h1>

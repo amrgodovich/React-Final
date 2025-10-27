@@ -1,7 +1,7 @@
 import React from 'react';
 import { useAuth } from '../../hooks/useAuth';
 
-const Navbar = ({ title, showLogout = false, onBack = null, backText = "← Back" }) => {
+const Navbar = ({ title, showLogout = false, onBack = null, backText = "Back" }) => {
   const { logout } = useAuth();
 
   return (
@@ -17,7 +17,8 @@ const Navbar = ({ title, showLogout = false, onBack = null, backText = "← Back
       </div>
       {showLogout && (
         <button
-          onClick={logout}
+          onClick={
+            logout}
           className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors"
         >
           Logout

@@ -12,7 +12,7 @@ const Dashboard = ({ onNavigate }) => {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      <Navbar title="Dashboard" showLogout={true} />
+      <Navbar title="Dashboard" showLogout={true}/>
       <div className="container mx-auto p-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {cards.map((card) => {

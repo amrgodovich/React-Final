@@ -1,5 +1,6 @@
 import React, { createContext, useState } from 'react';
 
+
 export const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
@@ -18,6 +19,7 @@ export const AuthProvider = ({ children }) => {
   const logout = () => {
     setIsAuthenticated(false);
     setUser(null);
+    // onNavigate('login');
   };
 
   return (
