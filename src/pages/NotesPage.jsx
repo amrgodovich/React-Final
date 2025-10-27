@@ -80,7 +80,7 @@ const NotesPage = ({ onNavigate }) => {
                   {notes_of_pr.map((note) => (
                     <div
                       key={note.id}
-                      className="bg-white border border-gray-200 rounded-lg p-3 flex flex-col sm:flex-row sm:items-center justify-between"
+                      className="border border-gray-200 rounded-lg p-3 flex flex-col sm:flex-row sm:items-center justify-between"
                     >
                       <p className="text-gray-800 mb-2 sm:mb-0">{note.text}</p>
                       <div className="flex gap-2">
